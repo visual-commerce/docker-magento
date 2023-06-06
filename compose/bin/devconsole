@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+source bin/environments
 bin/n98-magerun2 dev:console

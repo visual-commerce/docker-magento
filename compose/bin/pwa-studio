@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 set -o errexit
 
 if [ ! -d pwa-studio ]; then

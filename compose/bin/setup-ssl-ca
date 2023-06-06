@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 set -o errexit
 # Generate a new local CA "/root/.local/share/mkcert"
 bin/docker-compose exec -T -u root app mkcert -install

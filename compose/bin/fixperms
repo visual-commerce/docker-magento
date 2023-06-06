@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 echo "Fixing filesystem permissions..."
 
 if [ -z "$1" ]; then

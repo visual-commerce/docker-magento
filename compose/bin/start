@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 set -o errexit
 
 MEM=$(docker info | grep "Total Memory" | cut -d':' -f2 | xargs | sed s/GiB//)

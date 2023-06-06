@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 if [ -z "$(docker ps -q)" ]; then
     echo "You have no running container"
 else

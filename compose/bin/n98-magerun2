@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 if ! bin/cliq ls bin/n98-magerun2.phar; then
   echo "Downloading n98-magerun2.phar, just a moment..."
   bin/clinotty curl -sS -O https://files.magerun.net/n98-magerun2.phar

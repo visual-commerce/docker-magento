@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -a
+diretorio="env"
+for file in "$diretorio"/*; do
+  if [[ (-f "$file") ]]; then
+    source "${file}"
+  fi
+done
+
+current_folder=${PWD##*/}
+PROJECT_NAME=$(echo "$current_folder" | awk '{print tolower($0)}' | sed 's/\.//g')

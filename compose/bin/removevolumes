@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 current_folder=${PWD##*/}
 volume_prefix=$(echo "$current_folder" | awk '{print tolower($0)}' | sed 's/\.//g')
 docker volume rm "${volume_prefix}"_appdata

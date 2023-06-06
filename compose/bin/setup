@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source bin/environments
 set -o errexit
 
 MEM_BYTES=$(docker info -f '{{.MemTotal}}')

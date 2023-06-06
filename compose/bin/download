@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+source bin/environments
 VERSION=${1:-2.4.6}
 EDITION=${2:-community}
 

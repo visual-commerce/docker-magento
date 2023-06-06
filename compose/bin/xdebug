@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+source bin/environments
 S=$(bin/clinotty cat /usr/local/etc/php/php.ini | grep -iGc 'xdebug.mode = off');
 
 xdebug_status() {
