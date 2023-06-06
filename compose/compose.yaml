@@ -30,12 +30,18 @@ services:
       #- "magento.test:172.17.0.1"
       ## Linux, uncomment for Xdebug capabilities:
       #- "host.docker.internal:host-gateway"
+    networks:
+      - network
+    restart: always
 
   phpfpm:
     image: markoshust/magento-php:8.1-fpm-1
     volumes: *appvolumes
     env_file: env/phpfpm.env
     #extra_hosts: *appextrahosts
+    networks:
+      - network
+    restart: always
 
   db:
     image: mariadb:10.4
@@ -48,11 +54,17 @@ services:
     env_file: env/db.env
     volumes:
       - dbdata:/var/lib/mysql
+    networks:
+      - network
+    restart: always
 
   redis:
     image: redis:6.2-alpine
     ports:
       - 6379
+    networks:
+      - network
+    restart: always
 
   opensearch:
     image: markoshust/magento-opensearch:1.2-0
@@ -66,6 +78,9 @@ services:
       ## More info at https://github.com/markshust/docker-magento/issues/488
       - "cluster.routing.allocation.disk.threshold_enabled=false"
       - "index.blocks.read_only_allow_delete"
+    networks:
+      - network
+    restart: always
 
   ## If you wish to use Elasticsearch, comment out opensearch image above and
   ## uncomment this block. Do the same in the composer.healthcheck.yaml file.
@@ -93,11 +108,17 @@ services:
     volumes:
       - rabbitmqdata:/var/lib/rabbitmq
     env_file: env/rabbitmq.env
+    networks:
+      - network
+    restart: always
 
   mailcatcher:
     image: sj26/mailcatcher
     ports:
       - "${MAILCATCHER_PORT}:1080"
+    networks:
+      - network
+    restart: always
 
   ## Blackfire support, uncomment to enable
   #blackfire:
@@ -112,6 +133,11 @@ services:
   #  ports:
   #    - "5900:5900"
   #  extra_hosts: *appextrahosts
+
+networks:
+  network:
+    name: "${PROJECT_NAME}-network"
+    driver: bridge
 
 volumes:
   appdata:
