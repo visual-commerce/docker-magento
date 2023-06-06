@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-source bin/environments
 set -o errexit
+set -a
+source bin/environments
 
 MEM=$(docker info | grep "Total Memory" | cut -d':' -f2 | xargs | sed s/GiB//)
 # Docker reports RAM 0.2 less than what it is actually set to

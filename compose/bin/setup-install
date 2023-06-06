@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-source bin/environments
 set -o errexit
+set -a
+source bin/environments
 
 DOMAIN=${1:-magento.test}
 

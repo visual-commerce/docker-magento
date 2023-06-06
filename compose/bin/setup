@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-source bin/environments
 set -o errexit
+set -a
+source bin/environments
 
 MEM_BYTES=$(docker info -f '{{.MemTotal}}')
 MEM_MB=$(( MEM_BYTES / 1000000 ))

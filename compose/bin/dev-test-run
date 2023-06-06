@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -a
 source bin/environments
 [ -z "$1" ] && echo "Please specify test type (ex. integration)" && exit
 

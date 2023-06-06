@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -a
 source bin/environments
 # shellcheck source=../env/db.env
 source env/db.env
