@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 source bin/environments
+bin/stopall
 bin/remove
 bin/removevolumes

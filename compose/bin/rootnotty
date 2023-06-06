@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-source bin/environmentsease specify a CLI command (ex. ls)" && exit
+source bin/environments
+[ -z "$1" ] && echo "Please specify a CLI command (ex. ls)" && exit
 bin/docker-compose exec -u root -T phpfpm "$@"

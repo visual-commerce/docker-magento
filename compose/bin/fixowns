@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source bin/environments ownerships..."
+source bin/environments 
+echo "Fixing filesystem ownerships..."
 
 if [ -z "$1" ]; then
   bin/rootnotty chown -R app:app /var/www/

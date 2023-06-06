@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source bin/environments)" ]; then
+source bin/environments
+if [ -z "$(docker ps -q)" ]; then
     echo "You have no running container"
 else
     echo "Stopping all running containers..."
