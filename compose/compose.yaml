@@ -15,10 +15,12 @@ version: "3"
 services:
   app:
     image: markoshust/magento-nginx:1.18-8
-    env_file: env/nginx.env
+    args:
+        - HTTP_PORT=${NGINX_HTTP_PORT}
+        - SSL_PORT=${NGINX_SSL_PORT}
     ports:
-      - "${NGINX_HTTP_PORT}:8000"
-      - "${NGINX_SSL_PORT}:8443"
+      - "${HTTP_PORT}:8000"
+      - "${SSL_PORT}:8443"
     volumes: &appvolumes
       - ~/.composer:/var/www/.composer:cached
       - ~/.ssh/:/var/www/.ssh/:cached
