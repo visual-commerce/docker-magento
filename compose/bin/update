@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-set -a
-source bin/environments
-mkdir -p tmpupdate && cd "$_"
+source bin/environmentsd "$_"
 curl -s https://raw.githubusercontent.com/visual-commerce/docker-magento/master/lib/template | bash
 rm -rf .git
 rsync -av --checksum ./ ../

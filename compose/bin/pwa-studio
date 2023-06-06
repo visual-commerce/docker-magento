@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-set -a
 source bin/environments
-
 if [ ! -d pwa-studio ]; then
     echo "PWA studio must first be installed by running bin/setup-pwa-studio"
     exit

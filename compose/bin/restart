@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -a
 source bin/environments
 bin/stop "$@"
 bin/start "$@"

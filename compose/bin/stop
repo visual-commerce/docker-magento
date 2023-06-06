@@ -1,4 +1,2 @@
 #!/usr/bin/env bash
-set -a
-source bin/environments
-bin/docker-compose stop "$@"
+source bin/environments "$@"

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-set -a
 source bin/environments
-
 DOMAIN=${1:-magento.test}
 
 # shellcheck source=../env/db.env

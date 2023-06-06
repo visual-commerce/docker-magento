@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-set -a
 source bin/environments
 bin/cli bash

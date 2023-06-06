@@ -1,4 +1,2 @@
 #!/usr/bin/env bash
-set -a
-source bin/environments
-bin/n98-magerun2 dev:console
+source bin/environmentsnsole
