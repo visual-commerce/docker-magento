@@ -162,17 +162,17 @@ cd $_
 curl -s https://raw.githubusercontent.com/visual-commerce/docker-magento/master/lib/template | bash
 
 # Download the version of Magento you want to use with:
-bin/download 2.4.6 community
+# bin/download 2.4.6 community
 # You can specify the version and type (community, enterprise, mageos, mageos-nightly, mageos-mirror, mageos-hypernode-mirror, or mageos-maxcluster-mirror).
 # The mageos type is an alias for mageos-mirror.
 # If no arguments are passed, "2.4.6" and "community" are the default values used.
 
 # or for Magento core development:
-# bin/start --no-dev
-# bin/setup-composer-auth
-# bin/cli git clone git@github.com:magento/magento2.git .
+bin/start --no-dev
+bin/setup-composer-auth
+bin/cli git clone git@github.com:visual-commerce/visual-b2c-install.git .
 # bin/cli git checkout 2.4-develop
-# bin/composer install
+bin/composer install
 
 # Want to install Magento <2.4.6? In bin/setup-install, replace the lines:
 #  --elasticsearch-host="$ES_HOST" \
