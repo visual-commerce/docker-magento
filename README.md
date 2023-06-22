@@ -191,9 +191,9 @@ open https://magento2.docker
 
 bin/composer require swissup/module-marketplace && \
 bin/cli bin/magento setup:upgrade --safe-mode=1 && \
-bin/compoer composer require swissup/breeze-evolution && \
+bin/composer require swissup/breeze-evolution && \
 bin/cli bin/magento setup:upgrade --safe-mode=1 && \
-bin/cli  bin/magento marketplace:package:install swissup/breeze-evolution
+bin/cli bin/magento marketplace:package:install swissup/breeze-evolution
 
 open https://magento2.docker
 ```
