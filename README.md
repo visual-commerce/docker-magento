@@ -186,9 +186,16 @@ bin/composer install
 #  --search-engine=elasticsearch7 \
 
 # Run the setup installer for Magento:
-bin/setup magento.test
+bin/setup magento2.docker
+open https://magento2.docker
 
-open https://magento.test
+bin/composer require swissup/module-marketplace && \
+bin/cli bin/magento setup:upgrade --safe-mode=1 && \
+bin/compoer composer require swissup/breeze-evolution && \
+bin/cli bin/magento setup:upgrade --safe-mode=1 && \
+bin/cli  bin/magento marketplace:package:install swissup/breeze-evolution
+
+open https://magento2.docker
 ```
 
 #### Existing Projects
